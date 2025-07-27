@@ -41,21 +41,14 @@ export default function HeroSectionOne() {
             ))}
         </h1>
         <motion.p
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-            delay: 0.8,
-          }}
+          initial={{opacity: 0,}}
+          animate={{ opacity: 1,}}
+          transition={{duration: 0.3,delay: 0.8,}}
           className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
         >
           Leverage AI to understand symptoms, match patients to the right specialists, and streamline care—so doctors can focus on what matters most: healing.
         </motion.p>
-        <Link href="{ '/sign-in' }">
+        <Link href={'/sign-in'}>
         <motion.div
           initial={{opacity: 0,}}
           animate={{opacity: 1, }}
@@ -67,6 +60,7 @@ export default function HeroSectionOne() {
           </button>
         </motion.div>
         </Link>
+
         <motion.div
           initial={{
             opacity: 0,
