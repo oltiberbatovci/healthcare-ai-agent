@@ -1,7 +1,13 @@
 'use client';
+import { UserDetailContext } from '@/context/UserDetailContext';
 import { useUser } from '@clerk/nextjs';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react' //client side
+
+export type UsersDetail={
+  name:string,
+  email:string
+}
 
 function Provider({
   children,
@@ -11,7 +17,8 @@ function Provider({
 
     const{user} = useUser();
     const [userDetail, setUserDetail] = useState<any>();
-    useEffect(()=>{ //ekzekutim i logjikes
+
+    useEffect(()=>{ 
         user && CreateNewUser();
     },[user])
 
@@ -23,8 +30,9 @@ function Provider({
 
   return (
     <div>
-      <UserDetailContext.Provider value = {{userDetail,setUserDetail}}>
+      <UserDetailContext.Provider value={{userDetail, setUserDetail}}>
         {children}
+      </UserDetailContext.Provider>
     </div>
   )
 }
